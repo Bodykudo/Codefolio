@@ -4,8 +4,9 @@ type FormState = {
   title: string;
   description: string;
   image: string;
-  liveSiteUrl: string;
-  githubUrl: string;
+  liveSiteURL: string;
+  githubURL: string;
+  figmaURL: string;
   category: string;
 };
 
@@ -13,14 +14,15 @@ type ProjectInterface = {
   title: string;
   description: string;
   image: string;
-  liveSiteUrl: string;
-  githubUrl: string;
+  liveSiteURL: string;
+  githubURL: string;
+  figmaURL: string;
   category: string;
   id: string;
   createdBy: {
     name: string;
     email: string;
-    avatarUrl: string;
+    avatarURL: string;
     id: string;
   };
 };
@@ -29,10 +31,12 @@ type UserProfile = {
   id: string;
   name: string;
   email: string;
+  jobTitle: string | null;
   description: string | null;
-  avatarUrl: string;
-  githubUrl: string | null;
-  linkedinUrl: string | null;
+  avatarURL: string;
+  githubURL: string | null;
+  linkedInURL: string | null;
+  behanceURL: string | null;
   projects: {
     edges: { node: ProjectInterface }[];
     pageInfo: {
@@ -49,7 +53,7 @@ type SessionInterface = Session & {
     id: string;
     name: string;
     email: string;
-    avatarUrl: string;
+    avatarURL: string;
   };
 };
 
@@ -57,7 +61,18 @@ type ProjectForm = {
   title: string;
   description: string;
   image: string;
-  liveSiteUrl: string;
-  githubUrl: string;
+  liveSiteURL: string;
+  githubURL: string;
+  figmaURL: string;
   category: string;
+};
+
+type UserForm = {
+  name: string;
+  email: string;
+  jobTitle: string;
+  description: string;
+  linkedInURL: string;
+  githubURL: string;
+  behanceURL: string;
 };

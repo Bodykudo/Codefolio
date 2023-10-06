@@ -17,7 +17,7 @@ module.exports = {
         gray: '#4D4A4A',
         'gray-100': '#3d3d4e',
         'black-100': '#252525',
-        'primary-purple': '#9747FF',
+        'primary-purple': '#851C56',
         'gray-50': '#D9D9D9',
       },
       boxShadow: {
@@ -31,5 +31,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };
