@@ -27,7 +27,7 @@ export default function Button({
       type={type || 'button'}
       disabled={isDisabled}
       className={`flex items-center justify-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all max-md:w-full ${
-        isDisabled ? `${bgColor}/70` : bgColor
+        isDisabled ? `bg-primary-purple/70` : bgColor
       } ${textColor || 'text-white'}
       ${!isDisabled && `hover:${bgColor}/90`}
       
