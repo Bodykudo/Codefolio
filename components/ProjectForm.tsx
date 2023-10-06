@@ -141,7 +141,7 @@ export default function ProjectForm({ type, session, project }: Props) {
         type="url"
         title="Website URL"
         state={form.liveSiteURL}
-        placeholder="https://codefolio.vercel.app"
+        placeholder="https://codefolio-app.vercel.app"
         setState={(value: string) => handleStateChange('liveSiteURL', value)}
       />
 
