@@ -12,12 +12,10 @@ import Error from '@/components/Error';
 
 type Props = {
   params: { projectId: string };
-  parent?: ResolvingMetadata;
 };
 
 export async function generateMetadata({
   params: { projectId },
-  parent,
 }: Props): Promise<Metadata> {
   const result = (await getProjectDetails(projectId)) as {
     project?: ProjectInterface;
@@ -27,12 +25,6 @@ export async function generateMetadata({
     return {};
   }
 
-  let previousImages: any;
-  if (parent) {
-    previousImages = (await parent).openGraph?.images || [];
-  } else {
-    previousImages = [];
-  }
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
   return {
@@ -40,12 +32,12 @@ export async function generateMetadata({
     description: result.project?.description,
     openGraph: {
       title: `Codefolio - ${result.project?.title}`,
-      images: [result.project?.image as string, ...previousImages],
+      images: [result.project?.image as string, '/codefolio.png', '/logo.png'],
       url: baseUrl ? `${baseUrl}/project/${projectId}` : 'undefined',
     },
     twitter: {
       title: `Codefolio - ${result.project?.title}`,
-      images: [result.project?.image as string, ...previousImages],
+      images: [result.project?.image as string, '/codefolio.png', '/logo.png'],
     },
   };
 }

@@ -7,12 +7,10 @@ import Error from '@/components/Error';
 
 type Props = {
   params: { userId: string };
-  parent?: ResolvingMetadata;
 };
 
 export async function generateMetadata({
   params: { userId },
-  parent,
 }: Props): Promise<Metadata> {
   const result = (await getUserProjects(userId, 100)) as { user: UserProfile };
 
@@ -20,12 +18,6 @@ export async function generateMetadata({
     return {};
   }
 
-  let previousImages: any;
-  if (parent) {
-    previousImages = (await parent).openGraph?.images || [];
-  } else {
-    previousImages = [];
-  }
   const baseUrl = process.env.NEXT_PUBLIC_SERVER_URL;
 
   return {
@@ -33,12 +25,12 @@ export async function generateMetadata({
     description: result.user.description,
     openGraph: {
       title: `Codefolio - ${result.user.name}`,
-      images: [result.user.avatarURL, ...previousImages],
+      images: [result.user.avatarURL, '/codefolio.png', '/logo.png'],
       url: baseUrl ? `${baseUrl}/profile/${userId}` : 'undefined',
     },
     twitter: {
       title: `Codefolio - ${result.user.name}`,
-      images: [result.user.avatarURL, ...previousImages],
+      images: [result.user.avatarURL, '/codefolio.png', '/logo.png'],
     },
   };
 }
