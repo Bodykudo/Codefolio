@@ -60,6 +60,7 @@ export default function ProjectForm({ type, session, project }: Props) {
       );
     } finally {
       setIsSubmitting(false);
+      router.refresh();
       router.push('/');
     }
   };
