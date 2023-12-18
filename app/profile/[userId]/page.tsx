@@ -25,12 +25,12 @@ export async function generateMetadata({
     description: result.user.description,
     openGraph: {
       title: `Codefolio - ${result.user.name}`,
-      images: [result.user.avatarURL, '/codefolio.png', '/logo.png'],
+      images: [result.user.avatarURL, 'https://codefolio-app.vercel.app/codefolio.png', 'https://codefolio-app.vercel.app/logo.png'],
       url: baseUrl ? `${baseUrl}/profile/${userId}` : 'undefined',
     },
     twitter: {
       title: `Codefolio - ${result.user.name}`,
-      images: [result.user.avatarURL, '/codefolio.png', '/logo.png'],
+      images: [result.user.avatarURL, 'https://codefolio-app.vercel.app/codefolio.png', 'https://codefolio-app.vercel.app/logo.png'],
     },
   };
 }

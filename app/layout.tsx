@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Codefolio',
     type: 'website',
-    images: ['/codefolio.png', '/logo.png'],
+    images: ['https://codefolio-app.vercel.app/codefolio.png', 'https://codefolio-app.vercel.app/logo.png'],
     url: process.env.NEXT_PUBLIC_SERVER_URL || 'undefined',
     description:
       'Codefolio: Showcase your coding prowess with style. Share and discover developer projects, each presented with eye-catching posters and categorized for easy exploration. Elevate your portfolio in the coding community. Start building your digital footprint today.',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       'Codefolio: Showcase your coding prowess with style. Share and discover developer projects, each presented with eye-catching posters and categorized for easy exploration. Elevate your portfolio in the coding community. Start building your digital footprint today.',
     card: 'summary_large_image',
     creator: 'a_m_s666',
-    images: ['/codefolio.png', '/logo.png'],
+    images: ['https://codefolio-app.vercel.app/codefolio.png', 'https://codefolio-app.vercel.app/logo.png'],
   },
 };
 

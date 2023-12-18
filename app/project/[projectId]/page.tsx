@@ -32,12 +32,12 @@ export async function generateMetadata({
     description: result.project?.description,
     openGraph: {
       title: `Codefolio - ${result.project?.title}`,
-      images: [result.project?.image as string, '/codefolio.png', '/logo.png'],
+      images: [result.project?.image as string, 'https://codefolio-app.vercel.app/codefolio.png', 'https://codefolio-app.vercel.app/logo.png'],
       url: baseUrl ? `${baseUrl}/project/${projectId}` : 'undefined',
     },
     twitter: {
       title: `Codefolio - ${result.project?.title}`,
-      images: [result.project?.image as string, '/codefolio.png', '/logo.png'],
+      images: [result.project?.image as string, 'https://codefolio-app.vercel.app/codefolio.png', 'https://codefolio-app.vercel.app/logo.png'],
     },
   };
 }
